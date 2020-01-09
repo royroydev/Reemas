@@ -1,0 +1,202 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS file within this directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+
+*= require css/main-sass
+*= require_self
+*/
+
+
+.step {
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+.nextLink {
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+.prevLink {
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+.currentStep {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+.step.gap {
+    display: none;
+}
+
+.step:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.table-long{
+    position: absolute;
+    left: 0;
+}
+
+table.table-custom th, .text-wrap table th {
+  color: #9aa0ac;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+table.table-custom th,
+table.table-custom td {
+  padding: .1rem;
+} 
+
+
+
+table.table-custom thead th{
+    border-top: 0;
+    border-bottom-width: 1px;
+    padding-top: .1rem;
+    padding-bottom: .1rem;
+}
+
+
+/* .container-table{
+    border: 1px solid red;
+    position: relative;
+}
+
+.table-relative{
+  border: 2px solid purple;
+  position: absolute;
+  left: 0;
+  top: 150px;
+}
+
+ */
+
+/* TABLES */
+
+table.table-custom {
+    width: 100%
+}
+tr.tr-table-custom {
+    border: 0;
+}
+td.td-table-custom, th.th-table-custom { 
+    font: 11px verdana, arial, helvetica, sans-serif;
+    line-height: 12px;
+    padding: 5px 6px;
+    text-align: left;
+    vertical-align: top;
+}
+th.th-table-custom {
+    /* background: #fff url(../images/skin/shadow.jpg); */
+    color: #666;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 17px;
+    padding: 2px 6px;
+}
+th.th-table-custom a:link, th.th-table-custom a:visited, th.th-table-custom a:hover {
+    color: #333;
+    display: block;
+    font-size: 10px;
+    text-decoration: none;
+    width: 100%;
+}
+/* th.asc.th-table-custom a, th.desc.th-table-custom a {
+    background-position: right;
+    background-repeat: no-repeat;
+}
+th.asc a {
+    background-image: url(../images/skin/sorted_asc.gif);
+}
+th.desc a {
+    background-image: url(../images/skin/sorted_desc.gif);
+} */
+
+.odd {
+    background: #f7f7f7;
+}
+.even {
+    background: #fff;
+}
+
+/* LIST */
+
+.list table {
+    border-collapse: collapse;
+}
+.list th, .list td {
+    border-left: 1px solid #ddd;
+}
+.list th:hover, .list tr:hover {
+    background: #b2d1ff;
+}
+
+/* PAGINATION */
+
+.paginateButtons {
+    background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    border-top: 0;
+    color: #666;
+    font-size: 10px;
+    overflow: hidden;
+    padding: 10px 3px;
+}
+.paginateButtons a {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-color: #ccc #aaa #aaa #ccc;
+    color: #666;
+    margin: 0 3px;
+    padding: 2px 6px;
+}
+.paginateButtons span {
+    padding: 2px 3px;
+}
+
+
+
+
+
+
+
+
+/* .table thead th, .text-wrap table thead th {
+  border-top: 0;
+  border-bottom-width: 1px;
+  padding-top: .1rem;
+  padding-bottom: .1rem;
+}
+.table th, .text-wrap table th {
+  color: #9aa0ac;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.table-md th,
+.table-md td {
+  padding: .1rem;
+} */

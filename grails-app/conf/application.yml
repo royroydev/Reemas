@@ -1,0 +1,216 @@
+---
+grails:
+    profile: web
+    codegen:
+        defaultPackage: reemas
+    gorm:
+        reactor:
+            # Whether to translate GORM events into Reactor events
+            # Disabled by default for performance reasons
+            events: false
+
+info:
+    app:
+        name: '@info.app.name@'
+        version: '@info.app.version@'
+        grailsVersion: '@info.app.grailsVersion@'
+spring:
+    main:
+        banner-mode: "off"
+    groovy:
+        template:
+            check-template-location: false
+
+# Spring Actuator Endpoints are Disabled by Default
+endpoints:
+    enabled: false
+    jmx:
+        enabled: true
+
+---
+grails:
+    mime:
+        disable:
+            accept:
+                header:
+                    userAgents:
+                        - Gecko
+                        - WebKit
+                        - Presto
+                        - Trident
+        types:
+            all: '*/*'
+            atom: application/atom+xml
+            css: text/css
+            csv: text/csv
+            form: application/x-www-form-urlencoded
+            html:
+              - text/html
+              - application/xhtml+xml
+            js: text/javascript
+            json:
+              - application/json
+              - text/json
+            multipartForm: multipart/form-data
+            pdf: application/pdf
+            rss: application/rss+xml
+            text: text/plain
+            hal:
+              - application/hal+json
+              - application/hal+xml
+            xml:
+              - text/xml
+              - application/xml
+    urlmapping:
+        cache:
+            maxsize: 1000
+    controllers:
+        defaultScope: singleton
+        upload:
+            maxFileSize: 26214400
+            maxRequestSize: 26214400
+    converters:
+        encoding: UTF-8
+    views:
+        default:
+            codec: html
+        gsp:
+            encoding: UTF-8
+            htmlcodec: xml
+            codecs:
+                expression: html
+                scriptlets: html
+                taglib: none
+                staticparts: none
+endpoints:
+    jmx:
+        unique-names: true
+
+
+
+
+
+---
+hibernate:
+    globally_quoted_identifiers: true
+    cache:
+        queries: false
+        use_second_level_cache: false
+        use_query_cache: false
+
+
+
+environments:
+    development:
+        reemas:
+            email:
+                server:
+                    host: "lpmail03.lunariffic.com"
+                    username: "monitoring3@datapower-system.com"
+                    password: "kak1Buki+"
+                    protocol: "imap"
+                    port: "143"
+                    folderToRead: "Inbox"
+                    folderToArchive: "ARCHIVE"
+                    readTimeOut: "60000"
+
+                subjectPrefix: "SBD Msg From Unit:"
+
+            sftp:
+                remote:
+                    host: "127.0.0.1"
+                    username: "username"
+                    password: "password"
+                    remoteDir: "/Users/adan/opt/freelancer/sftp/"
+                    tempfolder: "active/"
+                    destfolder: "archive/"
+                    port: "22"
+                    keyFilePath: "/Users/user/dev/grails/id_rsa.key"
+                    throwException: false
+
+                local:
+                  localDir: "/Users/adan/opt/freelancer/local/"
+                  dataDirActive: "active/"
+                  dataDirArchive: "archive/"
+                  dataNameFile: "lastIndex.txt"
+
+            alert:
+                email1:
+                    to: ["alarm@datapower-system.com"]
+                    subject: "Reefer Monitoirng Records Server 88 Upload Failed"
+                email2:
+                    to: ["alarm@datapower-system.com"]
+                    subject: "Reefer monitoring alert"
+                email3:
+                    to: ["alarm@datapower-system.com"]
+                    subject: "Reefer power off alert"
+
+
+        dataSource:
+            pooled: true
+            jmxExport: true
+            driverClassName: com.mysql.jdbc.Driver
+            dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+            username: root
+            password: ''
+            dbCreate: create-drop
+            url: jdbc:mysql://localhost/reemas_final_dev
+
+
+    test:
+        dataSource:
+            dbCreate: update
+            url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+
+
+    production:
+        reemas:
+            email:
+                server:
+                    host: "lpmail03.lunariffic.com"
+                    username: "monitoring3@datapower-system.com"
+                    password: "kak1Buki+"
+                    protocol: "imap"
+                    port: "143"
+                    folderToRead: "Inbox"
+                    folderToArchive: "ARCHIVE"
+                    readTimeOut: "60000"
+
+                subjectPrefix: "SBD Msg From Unit:"
+
+            sftp:
+                remote:
+                    host: "193.109.119.16"
+                    username: "smart_temp_sftp"
+                    password: "zHPhN_8j"
+                    remoteDir: 'C:\reemas\records\'
+                    tempfolder: 'active\'
+                    destfolder: 'archive\'
+                    port: "22"
+                    keyFilePath: ""
+                    throwException: false
+
+                local:
+                    localDir: 'C:\Users\Limky\records\'
+                    dataDirActive: 'active\'
+                    dataDirArchive: 'archive\'
+                    dataNameFile: "lastIndex.txt"
+            alert:
+                email1:
+                    to: ["otherEmail@gmail.com", "alarm@datapower-system.com"]
+                    subject: "Reefer Monitoirng Records Server 88 Upload Failed"
+                email2:
+                    to: ["otherEmail@gmail.com", "alarm@datapower-system.com"]
+                    subject: "Reefer monitoring alert"
+                email3:
+                    to: ["otherEmail@gmail.com", "alarm@datapower-system.com"]
+                    subject: "Reefer power off alert"
+        dataSource:
+            pooled: true
+            jmxExport: true
+            driverClassName: com.mysql.jdbc.Driver
+            dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+            username: root
+            password: ''
+            dbCreate: update
+            url: jdbc:mysql://localhost:3306/reemas_prod

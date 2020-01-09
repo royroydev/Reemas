@@ -1,0 +1,54 @@
+//notification
+
+.notification-generic {
+  position: relative;
+}
+
+.notification-generic-wrapper {
+  z-index: 1050;
+}
+
+.notification-generic-container {
+  position: absolute;
+  right: 5px;
+  padding: 5px 10px;
+  top: 5px;
+}
+
+.notification-generic-base {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.text-wrapper-notify {
+  .title-notify {
+    font-weight: bold;
+  }
+  .text-notify {
+    padding-top: 5px;
+  }
+}
+
+// .success-notification-generic {
+//   color: $greenSuccessHi;
+//   background-color: $greenSuccessMd;
+//   border-color: $greenSuccessLo;
+// }
+//
+// .error-notification-generic {
+//   color: $redErrorHi;
+//   background-color: $redErrorMd;
+//   border-color: $redErrorLo;
+// }
+//
+// .info-notification-generic {
+//   color: $blueInfoHi;
+//   background-color: $blueInfoMd;
+//   border-color: $blueInfoLo;
+// }
+//
+// .warning-notification-generic {
+//   color: $orangeWarningHi;
+//   background-color: $orangeWarningMd;
+//   border-color: $orangeWarningLo;
+// }
